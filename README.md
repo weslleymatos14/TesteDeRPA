@@ -1,39 +1,42 @@
-### Documentation is included in the Documentation folder ###
+### A documentação está incluída na pasta Documentação
 
+### Modelo REFrameWork
 
-### REFrameWork Template ###
 **Robotic Enterprise Framework**
 
-* Built on top of *Transactional Business Process* template
-* Uses *State Machine* layout for the phases of automation project
-* Offers high level logging, exception handling and recovery
-* Keeps external settings in *Config.xlsx* file and Orchestrator assets
-* Pulls credentials from Orchestrator assets and *Windows Credential Manager*
-* Gets transaction data from Orchestrator queue and updates back status
-* Takes screenshots in case of system exceptions
+- Construído com base no modelo de Processo de Negócio Transacional
+- Utiliza o layout de Máquina de Estado para as fases do projeto de automação
+- Oferece registro de alto nível, tratamento de exceções e recuperação
+- Mantém configurações externas no arquivo Config.xlsx
+- Obtém dados de transação do arquivo Transactions.xlsx (processo linear)
+- Captura screenshots em caso de exceções do sistema
 
-
-### How It Works ###
+### Como Funciona
 
 1. **INITIALIZE PROCESS**
- + ./Framework/*InitiAllSettings* - Load configuration data from Config.xlsx file and from assets
- + ./Framework/*GetAppCredential* - Retrieve credentials from Orchestrator assets or local Windows Credential Manager
- + ./Framework/*InitiAllApplications* - Open and login to applications used throughout the process
+
+- ./Framework/InitiAllSettings - Carrega dados de configuração do arquivo Config.xlsx e dos ativos
+- ./Framework/InitiAllApplications - Abre e faz login nas aplicações usadas durante o processo
 
 2. **GET TRANSACTION DATA**
- + ./Framework/*GetTransactionData* - Fetches transactions from an Orchestrator queue defined by Config("OrchestratorQueueName") or any other configured data source
+   +./Framework/GetTransactionData - Busca a transação do arquivo Transaction.xlsx (processo linear)
 
 3. **PROCESS TRANSACTION**
- + *Process* - Process trasaction and invoke other workflows related to the process being automated 
- + ./Framework/*SetTransactionStatus* - Updates the status of the processed transaction (Orchestrator transactions by default): Success, Business Rule Exception or System Exception
+
+- _Process_ - Processa a transação e invoca outros fluxos de trabalho relacionados ao processo automatizado
+- _1.VerificarDataDeAtualização_ - Realiza a validação da data da última alteração, versus a data do último download dos arquivos
+- _2.RealizaDownload_ - Realiza a leitura do arquivo ResourceNames.xlsx, conténdo os nomes dos recursos que será feito o download dos arquivos, e controla os arquivos que já foram realizados salvos
+- _3.ProcessaArquivos_ - Realiza a extração dos arquivos .zip para a pasta na rede
+- _4.NotificaTI_ - Realiza o envio do e-mail, notificando o sucesso da execução do processo
+- ./Framework/SetTransactionStatus - Atualiza o status da transação processada (transações do Orchestrator por padrão): Sucesso, Exceção de Regra de Negócio ou Exceção de Sistema
 
 4. **END PROCESS**
- + ./Framework/*CloseAllApplications* - Logs out and closes applications used throughout the process
 
+- ./Framework/CloseAllApplications - Encerra sessão e fecha as aplicações usadas durante o processo
 
-### For New Project ###
+### Instruções
 
-1. Check the Config.xlsx file and add/customize any required fields and values
-2. Implement InitiAllApplications.xaml and CloseAllApplicatoins.xaml workflows, linking them in the Config.xlsx fields
-3. Implement GetTransactionData.xaml and SetTransactionStatus.xaml according to the transaction type being used (Orchestrator queues by default)
-4. Implement Process.xaml workflow and invoke other workflows related to the process being automated
+1. Verifique o arquivo Config.xlsx e adicione/customize quaisquer campos e valores necessários
+2. Verifique o arquivo Transaction.xlsx e adicione uma data para o último download realizado
+3. Verifique o arquivo ResourceNames.xlsx e adicione/remova os recursos que deseja que o processo realize o donwload
+4. Configure o workflow _4.NotificaTI.xaml_ com o seu e-mail que está habilitado para envio SMTP ou Outlook
