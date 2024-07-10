@@ -19,7 +19,8 @@
 - ./Framework/InitiAllApplications - Abre e faz login nas aplicações usadas durante o processo
 
 2. **GET TRANSACTION DATA**
-   +./Framework/GetTransactionData - Busca a transação do arquivo Transaction.xlsx (processo linear)
+
+- ./Framework/GetTransactionData - Busca a transação do arquivo Transaction.xlsx (processo linear)
 
 3. **PROCESS TRANSACTION**
 
