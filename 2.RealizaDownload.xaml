@@ -1,0 +1,407 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="_2_RealizaDownload" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>2139,5467</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>_2_RealizaDownload_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>UiPath.Excel.Activities.Business</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.Numerics</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.Watcher</AssemblyReference>
+      <AssemblyReference>System.IO.Packaging</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.AccessControl</AssemblyReference>
+      <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
+      <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="2.RealizaDownload" sap:VirtualizedContainerService.HintSize="1366,5402" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="dtResourceNames" />
+      <Variable x:TypeArguments="x:String" Name="strResourceName" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1304,173" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Reading Resouce Names File&quot;]" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtResourceNames]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="1304,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Resource Names" WorkbookPath="Data\Temp\ResourceNames.xlsx" />
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Edge Portal de Dados Abertos" sap:VirtualizedContainerService.HintSize="1304,5021" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" ScopeGuid="08f1d534-6126-426c-8070-7a7b5521d1b3" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1270,4781" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="intIndex" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Recursos41'" sap:VirtualizedContainerService.HintSize="1208,225" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="DebuggerApi" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="08f1d534-6126-426c-8070-7a7b5521d1b3" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj" DesignTimeRectangle="884, 751, 1593, 79" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname='Recursos41' id='btnCollapse' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Recursos41' id='btnCollapse' tag='BUTTON' type='button' class='btn btn-light btn-block m-1 dataset-btn botao-collapse-Recursos collapsed' check:innerText='Recursos*' /&gt;" Guid="e4d5e058-7a37-4cab-898c-b93a16378f1a" ImageBase64="" InformativeScreenshot="c5f28fb54770de200636a44f93c2f999.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Portal de Dados Abertos' /&gt;" SearchSteps="FuzzySelector" Version="V4" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CVScreenId="2c4fb502-623b-4935-ab95-e5786b1bc712" CvElementArea="877, 1094, 1600, 84" CvType="InputBox" DesignTimeRectangle="905, 776, 101, 28" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Recursos' parentid='btnCollapse' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Recursos' parentid='btnCollapse' tag='SPAN' type='' class='' check:innerText='Recursos' /&gt;" Guid="77334175-5c15-420a-8184-7d8bc697d055" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="[intIndex]" DataTable="[dtResourceNames]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="1208,4466" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1174,4277" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="si:FileInfo" Name="fiDownloadedFile" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign DisplayName="Assign strResourceName" sap:VirtualizedContainerService.HintSize="1112,114" sap2010:WorkflowViewState.IdRef="Assign_1">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[strResourceName]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[CurrentRow("Name").ToString]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <If Condition="[Not String.IsNullOrEmpty(CurrentRow(&quot;Status&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="1112,584" sap2010:WorkflowViewState.IdRef="If_2">
+                      <If.Then>
+                        <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,311" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="354,175" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[strResourceName + &quot; file was already downloaded&quot;]" />
+                          <ui:Continue sap:VirtualizedContainerService.HintSize="354,48" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                        </Sequence>
+                      </If.Then>
+                      <If.Else>
+                        <Sequence DisplayName="Else" sap:VirtualizedContainerService.HintSize="416,103" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </Sequence>
+                      </If.Else>
+                    </If>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1112,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Downloading &quot; + strResourceName +&quot; file&quot;]" />
+                    <ui:GetLastDownloadedFile FileResource="{x:Null}" IgnoreFiles="{x:Null}" Timeout="{x:Null}" DisplayName="Wait for Download" DownloadFolder="[in_Config(&quot;Directory&quot;).ToString]" File="[fiDownloadedFile]" sap:VirtualizedContainerService.HintSize="1112,3002" sap2010:WorkflowViewState.IdRef="GetLastDownloadedFile_1">
+                      <ui:GetLastDownloadedFile.Body>
+                        <ActivityAction>
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1078,2714" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Acessar o recurso'" sap:VirtualizedContainerService.HintSize="1016,225" sap2010:WorkflowViewState.IdRef="NClick_2" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="08f1d534-6126-426c-8070-7a7b5521d1b3" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj" CVScreenId="bc84cbf2-261d-4fc9-9008-8133b7aba62c" ContentHash="knPTcYuwfEuNn-LoEhQryA" CvElementArea="1147, 715, 198, 43" CvTextArea="1189, 730, 113, 12" CvTextArgument="Acessar O recurso" CvType="Button" DesignTimeRectangle="1150, 718, 193, 38" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='btnDownloadUrl' idx='3' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btnDownloadUrl' type='button' tag='BUTTON' class='btn btn btn-secondary btn-secondary' aaname=' Acessar o recurso ' check:innerText='Acessar o recurso' /&gt;" Guid="8cfe6419-394d-4111-83d8-c493a86707d9" InformativeScreenshot="33274a60de5ee05c27721bce5c7feead.png" Reference="PaB75GTPFUmqAUZqO-m7Lw/LkNwsO3Lv0m5g-OqjlQhAA" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Portal de Dados Abertos' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="bc84cbf2-261d-4fc9-9008-8133b7aba62c" CvTextArea="1149, 608, 718, 22" CvTextArgument="Dicionario de Dados do Cadastro Nacional da Pessoa Juridica" CvType="Text" DesignTimeRectangle="1149, 608, 718, 23" ElementType="Text" FullSelectorArgument="&lt;webctrl idx='3' parentid='collapse-recursos' tag='H4' /&gt;" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl type='' parentid='collapse-recursos' tag='H4' class='' aaname='Dicionário de Dados do Cadastro Nacional da Pessoa Jurídica' check:innerText='{0}' /&gt;&quot;, strResourceName)]" Guid="5bd62a23-9452-4c49-9acb-826a67265817" SearchSteps="FuzzySelector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NClick.Target>
+                              <uix:NClick.VerifyOptions>
+                                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                  <uix:VerifyExecutionOptions.Retry>
+                                    <InArgument x:TypeArguments="x:Boolean" />
+                                  </uix:VerifyExecutionOptions.Retry>
+                                  <uix:VerifyExecutionOptions.Timeout>
+                                    <InArgument x:TypeArguments="x:Double" />
+                                  </uix:VerifyExecutionOptions.Timeout>
+                                </uix:VerifyExecutionOptions>
+                              </uix:NClick.VerifyOptions>
+                            </uix:NClick>
+                            <uix:NCheckState DisplayName="Check App State 'Pdf File Tab'" sap:VirtualizedContainerService.HintSize="1016,1428" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="08f1d534-6126-426c-8070-7a7b5521d1b3" Version="V3">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="512,1179" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Found file tab&quot;]" />
+                                  <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Microsoft Word - NOVOLAYOUTDOSDADOSABERTOSDOCNPJ-convertido" sap:VirtualizedContainerService.HintSize="450,914" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="DebuggerApi" ScopeGuid="16ad5ca0-df49-4e70-aad2-4a55babc139f" Version="V2">
+                                    <uix:NApplicationCard.Body>
+                                      <ActivityAction x:TypeArguments="x:Object">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                        </ActivityAction.Argument>
+                                        <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416,672" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'push button'" sap:VirtualizedContainerService.HintSize="354,225" sap2010:WorkflowViewState.IdRef="NClick_3" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="08f1d534-6126-426c-8070-7a7b5521d1b3" Version="V3">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable BrowserURL="https://www.gov.br/receitafederal/dados/cnpj-metadados.pdf" DesignTimeRectangle="2388, 82, 37, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Microsoft Word - NOVOLAYOUTDOSDADOSABERTOSDOCNPJ-convertido' role='document' /&gt;&lt;ctrl name='Barra de PDF' role='tool bar' /&gt;&lt;ctrl name='Salvar (Ctrl+B)' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Microsoft Word - NOVOLAYOUTDOSDADOSABERTOSDOCNPJ-convertido' role='document' /&gt;&lt;ctrl name='Barra de PDF' role='tool bar' /&gt;&lt;ctrl name='Salvar (Ctrl+B)' role='push button' automationid='' /&gt;" Guid="69fe8e41-cb1a-4203-b5f6-aa3086256492" InformativeScreenshot="b5979fdc09e0fbddafc3636dc8d17922.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Microsoft Word - NOVOLAYOUTDOSDADOSABERTOSDOCNPJ-convertido - Pe*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                                            </uix:NClick.Target>
+                                            <uix:NClick.VerifyOptions>
+                                              <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                                <uix:VerifyExecutionOptions.Retry>
+                                                  <InArgument x:TypeArguments="x:Boolean" />
+                                                </uix:VerifyExecutionOptions.Retry>
+                                                <uix:VerifyExecutionOptions.Timeout>
+                                                  <InArgument x:TypeArguments="x:Double" />
+                                                </uix:VerifyExecutionOptions.Timeout>
+                                              </uix:VerifyExecutionOptions>
+                                            </uix:NClick.VerifyOptions>
+                                          </uix:NClick>
+                                          <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'File Name'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="354,250" sap2010:WorkflowViewState.IdRef="NTypeInto_1" InteractionMode="HardwareEvents" ScopeIdentifier="08f1d534-6126-426c-8070-7a7b5521d1b3" Text="[&quot;[k(Home)]&quot; + in_Config(&quot;Directory&quot;).ToString + &quot;[k(Enter)]&quot;]" Version="V3">
+                                            <uix:NTypeInto.Target>
+                                              <uix:TargetAnchorable BrowserURL="https://www.gov.br/receitafederal/dados/cnpj-metadados.pdf" CVScreenId="065ff819-1feb-481b-9001-1eb8930a27be" ContentHash="M62bm71yoUmDOI_FQkufgg" CvElementArea="131, 425, 816, 24" CvType="InputBox" DesignTimeRectangle="136, 429, 791, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nome:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nome:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="5cbf758b-0fbb-4e2e-ba27-fe0632bb5b49" ImageBase64="" InformativeScreenshot="cc1fe986fc517df715d98c2f9524b785.png" IsResponsive="True" Reference="PaB75GTPFUmqAUZqO-m7Lw/JnTP4cmXOUaWu74d-O55zg" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Salvar como' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
+                                                <uix:TargetAnchorable.Anchors>
+                                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                                    <uix:Target CVScreenId="065ff819-1feb-481b-9001-1eb8930a27be" CvTextArea="91, 431, 37, 12" CvTextArgument="Nome:" CvType="Text" DesignTimeRectangle="18, 426, 115, 23" ElementType="Text" FullSelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;ctrl name='Painel do Explorer' role='pane' /&gt;&lt;ctrl name='Painel de Layout de Pastas' role='pane' /&gt;&lt;ctrl name='Painel de Detalhes' role='pane' /&gt;&lt;ctrl name='Nome:' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;ctrl name='Painel do Explorer' role='pane' /&gt;&lt;ctrl name='Painel de Layout de Pastas' role='pane' /&gt;&lt;ctrl name='Painel de Detalhes' role='pane' /&gt;&lt;ctrl name='Nome:' role='text' automationid='' check:text='Nome:' /&gt;" Guid="06f24f1b-f67b-4b20-a6eb-62a237257397" ImageBase64="" SearchSteps="Selector, CV" />
+                                                  </scg:List>
+                                                </uix:TargetAnchorable.Anchors>
+                                              </uix:TargetAnchorable>
+                                            </uix:NTypeInto.Target>
+                                          </uix:NTypeInto>
+                                          <uix:NNavigateBrowser Action="CloseTab" DisplayName="Navigate Browser - Close Tab" sap:VirtualizedContainerService.HintSize="354,107" sap2010:WorkflowViewState.IdRef="NNavigateBrowser_1" Version="V3" />
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </uix:NApplicationCard.Body>
+                                    <uix:NApplicationCard.TargetApp>
+                                      <uix:TargetApp Area="-8, -8, 2576, 1408" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAASCSURBVFhHvdd7TFZ1GAfwY1rRxJE2o3SkazTyj1YGtZqx2irdsj8aLVuXuZFr2uWPCCxQhIWXQVEwyFcrS6ORCzZh8Eeh4JYQRCDw3uLudUCWqCCXF97Lt+9zXn5wwiPwLuDZPuO9sN/34Tnn/M5BMyvYdQvocQodez9/pQIphyoomm6Rz+alJGiMhUB/UxrNzzRUCO0naUB46Td6gW6luStZfMyXpBpQrlE2rSL992a94NQ0ry1Ig0PL9doWwdUUiuHGe+CxLgE/Ez4GN9Emun3WGgndblNuW55gj9p1wFKeZPkKWzILEJtZiLicwziQl4a64zEYalwhjQww+FuK+N9NGMIfoiN0OSTBjuB4J4ISHDp5HcKfDybV4d3sH/RGGCpaaQstliZEYBVbp2lR5Qu0D5peCo63tjMcqxPtuD/JjlUf27E8wcZwK5aRfLeMpKFHk2twtGC7/9DYNRcV0FqSPWRmFZXq1F7N7dDWp7e+uNnS2fNpSTeKa6+gsrkPv7ddx6/OfhTW9GJvURdistoRzsZUIzxMfN+AfDbhtS9U0zhPcXSnNCGmrP4hjzY04o08c8nVwte4Wfl8wNUBN07a+7Dt0NnxyUgTkTtr8EfZK/4T1N+Em36mdTT1Bsa1g6nY4/Xhnz43mruGUN85gNNnBtDaPYze/lHId8YacHn0qUTvaeY5YdUPxztZ+RhsCFMNKH9RKt1N5tOobulfV1Ddeznu+/N4PqMVj6Q4EbHDoVub6sTGz9qQePQCyhqv6RMwVgMb3ZjZxkNiQ0RiPWrLNhmnoMgGVkkbaBH9t9bsdGy99yObW06yEH2kNv34+o+xTf9MvpORv57bgRPWPoy6JyZiPTeI59JbcceHDuQc2WfWgHKFPqcwmpgGgw6qwOlIIzKZzNIe9A1OnC9l1msI39GM97PzMGpdahauyAZ2ml4mfQOTBoonB01FTWjXTxfHm3B7fEgp7MZr6cfMzgMzsoEdonBp4JgxIBBZnISESzkuuhBnKWED3CHNQ408dJwipYGcyQvPhEyC5w8qeFlKuXh+njhVBFfjYrNAowsUT0tJPwRvksu4+EzJObHZ0jF+KEYu/QifzTRUmO+UXGg1OYwLB0K27AqbfwroyQDMG2iht+jGewUXEcnGRQMhU0gu6IJv+BzQ9szk4Ov0NT1A5hsRFxErqEotGojgeDveyK7FYNs2Y7BcbvUUQ/7L7WbFRZQnqEUWnSm5Nct94JfSt43hvZRBK2n6m5EUF1OepGrykWmokBuQ7P8b0spRXhqrguXSOknP0kIKrLiwspI+oTZyy18pDyIKP8NTKaew75tsdFY+rbbeLkqkuyQ44HBjMUDw4aQ9zJK3O5+QenA/+HiGrO8yUFL8Hs5WRYPPjBI+wrAieoxm/hAyXeFPcpBT26tuLl4Zs7x2jv20a+20lZZIsJi1UgvSHlLHWJF9/DCtodkNVqUWpt2kguXSaiR5FA+iuQmXUouT/Dsm4VfpC7qP5i5YlQoheZyqovV049PMXJUEjXmYZr6hBFya9i/7FT1OeyYIRgAAAABJRU5ErkJggg==" InformativeScreenshot="2e70f7c9af611209ee566836ba5d21bb.jpg" Selector="&lt;html app='msedge.exe' title='Microsoft Word - NOVOLAYOUTDOSDADOSABERTOSDOCNPJ-convertido' /&gt;" Title="Microsoft Word - NOVOLAYOUTDOSDADOSABERTOSDOCNPJ-convertido" Url="https://www.gov.br/receitafederal/dados/cnpj-metadados.pdf" />
+                                    </uix:NApplicationCard.TargetApp>
+                                  </uix:NApplicationCard>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;File tab did not open&quot;]" />
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.gov.br/receitafederal/dados/cnpj-metadados.pdf" DesignTimeRectangle="2388, 82, 37, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Microsoft Word - NOVOLAYOUTDOSDADOSABERTOSDOCNPJ-convertido' role='document' /&gt;&lt;ctrl name='Barra de PDF' role='tool bar' /&gt;&lt;ctrl name='Salvar (Ctrl+B)' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Microsoft Word - NOVOLAYOUTDOSDADOSABERTOSDOCNPJ-convertido' role='document' /&gt;&lt;ctrl name='Barra de PDF' role='tool bar' /&gt;&lt;ctrl name='Salvar (Ctrl+B)' role='push button' automationid='' /&gt;" Guid="d35edf20-0895-47c7-b537-e93210864b8c" InformativeScreenshot="3558c5b79b6aaae255b8a4c68e52c0b4.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' title='Microsoft Word - NOVOLAYOUTDOSDADOSABERTOSDOCNPJ-convertido e ma*' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V4" Visibility="Interactive" />
+                              </uix:NCheckState.Target>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NCheckState>
+                            <uix:NCheckState DisplayName="Check App State 'Button 'Salvar como''" sap:VirtualizedContainerService.HintSize="1016,973" sap2010:WorkflowViewState.IdRef="NCheckState_2" ScopeIdentifier="08f1d534-6126-426c-8070-7a7b5521d1b3" Version="V3">
+                              <uix:NCheckState.IfExists>
+                                <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="450,733" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Found 'Save as' popup&quot;]" />
+                                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Button 'Salvar como''" sap:VirtualizedContainerService.HintSize="388,225" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="08f1d534-6126-426c-8070-7a7b5521d1b3" Version="V3">
+                                    <uix:NClick.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj" CVScreenId="b8f42a9e-3926-4317-b6c2-6a6283cee08c" ContentHash="3wq6wgmVzE6D_OLRbI45KA" CvElementArea="182, 84, 160, 35" CvType="InputBox" DesignTimeRectangle="183, 86, 119, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Downloads recentes' role='list' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='grouping' /&gt;&lt;ctrl name='Salvar como Mais opções' role='menu button' /&gt;&lt;ctrl name='Salvar como' role='push button' /&gt;" FuzzyAccuracy="0.7" FuzzySelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Downloads recentes' role='list' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='grouping' /&gt;&lt;ctrl name='Salvar como Mais opções' role='menu button' /&gt;&lt;ctrl name='Salvar como' role='push button' automationid='' check:fulltext='Salvar como' /&gt;" Guid="4f1620a1-fba6-489f-9111-6669769103b9" InformativeScreenshot="5ea51bb1f5a14f90376b2d1d24cf0e71.png" Reference="PaB75GTPFUmqAUZqO-m7Lw/dxnNepJ7pkunKTS8j7dVkg" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CVScreenId="b8f42a9e-3926-4317-b6c2-6a6283cee08c" CvTextArea="67, 64, 221, 15" CvTextArgument="O que voce quer fazer com Cnaes (1).zip?" CvType="Text" DesignTimeRectangle="69, 62, 244, 16" ElementType="Text" FullSelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Downloads recentes' role='list' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='grouping' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='grouping' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Downloads recentes' role='list' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='grouping' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='grouping' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='text' automationid='' check:fulltext='O que você quer fazer com *?' /&gt;" Guid="20ee29c3-00f3-4882-8d6d-dd924685925c" SearchSteps="Selector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NClick.Target>
+                                    <uix:NClick.VerifyOptions>
+                                      <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                                        <uix:VerifyExecutionOptions.Retry>
+                                          <InArgument x:TypeArguments="x:Boolean" />
+                                        </uix:VerifyExecutionOptions.Retry>
+                                        <uix:VerifyExecutionOptions.Timeout>
+                                          <InArgument x:TypeArguments="x:Double" />
+                                        </uix:VerifyExecutionOptions.Timeout>
+                                      </uix:VerifyExecutionOptions>
+                                    </uix:NClick.VerifyOptions>
+                                  </uix:NClick>
+                                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'File Name'" EmptyFieldMode="None" sap:VirtualizedContainerService.HintSize="388,243" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="08f1d534-6126-426c-8070-7a7b5521d1b3" Text="[&quot;[k(Home)]&quot; + in_Config(&quot;Directory&quot;).ToString + &quot;[k(Enter)]&quot;]" Version="V3">
+                                    <uix:NTypeInto.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.gov.br/receitafederal/dados/cnpj-metadados.pdf" CVScreenId="065ff819-1feb-481b-9001-1eb8930a27be" ContentHash="M62bm71yoUmDOI_FQkufgg" CvElementArea="131, 425, 816, 24" CvType="InputBox" DesignTimeRectangle="136, 429, 791, 17" DesignTimeScaleFactor="1" ElementType="InputBox" FullSelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nome:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Nome:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;" Guid="5cbf758b-0fbb-4e2e-ba27-fe0632bb5b49" ImageBase64="" InformativeScreenshot="cc1fe986fc517df715d98c2f9524b785.png" IsResponsive="True" Reference="PaB75GTPFUmqAUZqO-m7Lw/JnTP4cmXOUaWu74d-O55zg" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Salvar como' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CVScreenId="065ff819-1feb-481b-9001-1eb8930a27be" CvTextArea="91, 431, 37, 12" CvTextArgument="Nome:" CvType="Text" DesignTimeRectangle="18, 426, 115, 23" ElementType="Text" FullSelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;ctrl name='Painel do Explorer' role='pane' /&gt;&lt;ctrl name='Painel de Layout de Pastas' role='pane' /&gt;&lt;ctrl name='Painel de Detalhes' role='pane' /&gt;&lt;ctrl name='Nome:' role='text' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Painel do Explorer' cls='DirectUIHWND' /&gt;&lt;ctrl name='Painel do Explorer' role='pane' /&gt;&lt;ctrl name='Painel de Layout de Pastas' role='pane' /&gt;&lt;ctrl name='Painel de Detalhes' role='pane' /&gt;&lt;ctrl name='Nome:' role='text' automationid='' check:text='Nome:' /&gt;" Guid="06f24f1b-f67b-4b20-a6eb-62a237257397" ImageBase64="" SearchSteps="Selector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NTypeInto.Target>
+                                  </uix:NTypeInto>
+                                </Sequence>
+                              </uix:NCheckState.IfExists>
+                              <uix:NCheckState.IfNotExists>
+                                <Sequence DisplayName="Target does not appear" sap:VirtualizedContainerService.HintSize="450,258" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,168" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Info" Message="[&quot;Save as popup did not open&quot;]" />
+                                </Sequence>
+                              </uix:NCheckState.IfNotExists>
+                              <uix:NCheckState.Target>
+                                <uix:TargetAnchorable BrowserURL="https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj" CVScreenId="b8f42a9e-3926-4317-b6c2-6a6283cee08c" ContentHash="3wq6wgmVzE6D_OLRbI45KA" CvElementArea="182, 84, 160, 35" CvType="InputBox" DesignTimeRectangle="183, 86, 119, 32" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Downloads recentes' role='list' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='grouping' /&gt;&lt;ctrl name='Salvar como Mais opções' role='menu button' /&gt;&lt;ctrl name='Salvar como' role='push button' /&gt;" FuzzyAccuracy="0.7" FuzzySelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Downloads recentes' role='list' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='grouping' /&gt;&lt;ctrl name='Salvar como Mais opções' role='menu button' /&gt;&lt;ctrl name='Salvar como' role='push button' automationid='' check:fulltext='Salvar como' /&gt;" Guid="4f1620a1-fba6-489f-9111-6669769103b9" InformativeScreenshot="5ea51bb1f5a14f90376b2d1d24cf0e71.png" Reference="PaB75GTPFUmqAUZqO-m7Lw/dxnNepJ7pkunKTS8j7dVkg" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='Chrome_WidgetWin_1' idx='*' /&gt;" SearchSteps="Selector, CV" Version="V4" Visibility="Interactive">
+                                  <uix:TargetAnchorable.Anchors>
+                                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                      <uix:Target CVScreenId="b8f42a9e-3926-4317-b6c2-6a6283cee08c" CvTextArea="67, 64, 221, 15" CvTextArgument="O que voce quer fazer com Cnaes (1).zip?" CvType="Text" DesignTimeRectangle="69, 62, 244, 16" ElementType="Text" FullSelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Downloads recentes' role='list' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='grouping' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='grouping' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='text' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Downloads' role='document' /&gt;&lt;ctrl name='Downloads recentes' role='list' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='grouping' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='grouping' /&gt;&lt;ctrl name='O que você quer fazer com *?' role='text' automationid='' check:fulltext='O que você quer fazer com *?' /&gt;" Guid="20ee29c3-00f3-4882-8d6d-dd924685925c" SearchSteps="Selector, CV" />
+                                    </scg:List>
+                                  </uix:TargetAnchorable.Anchors>
+                                </uix:TargetAnchorable>
+                              </uix:NCheckState.Target>
+                            </uix:NCheckState>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:GetLastDownloadedFile.Body>
+                    </ui:GetLastDownloadedFile>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1112,175" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;File saved as: &quot; + fiDownloadedFile.FullName]" />
+                    <ui:WriteCell Cell="[&quot;B&quot; + (intIndex+2).ToString]" DisplayName="Write Cell Workbook" sap:VirtualizedContainerService.HintSize="1112,139" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Resource Names" Text="Downloaded" WorkbookPath="Data\Temp\ResourceNames.xlsx" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+            </ui:ForEachRow>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 2576, 1408" BrowserType="Edge" ContentHash="lWHLlWOYQ0u7kjCnZDmOTQ" IconBase64="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" InformativeScreenshot="29677a027ed470f68d13f3f0e27707df.jpg" Reference="PaB75GTPFUmqAUZqO-m7Lw/evHYCuGfcUKaVTimdCxIdg" Selector="&lt;html app='msedge.exe' title='Portal de Dados Abertos' /&gt;" Title="Portal de Dados Abertos" Url="[in_Config(&quot;Portal_Url&quot;).ToString]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

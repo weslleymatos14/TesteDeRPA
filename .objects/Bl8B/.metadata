@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Edge Portal de Dados Abertos",
+  "Type": "App",
+  "Id": "Bl8B0r8y-U-Tk-ASOz1O_Q",
+  "Reference": "PaB75GTPFUmqAUZqO-m7Lw/Bl8B0r8y-U-Tk-ASOz1O_Q",
+  "Created": "2024-07-09T15:57:46.6535482Z",
+  "Updated": "2024-07-09T15:57:46.6535482Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.0.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.10.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
