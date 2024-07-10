@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-16"?>
-<ObjectRepositoryTargetData ContentHash="knPTcYuwfEuNn-LoEhQryA" Reference="PaB75GTPFUmqAUZqO-m7Lw/LkNwsO3Lv0m5g-OqjlQhAA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<ObjectRepositoryTargetData ContentHash="hFrSWnG8GUqttHWQ8CI-rQ" Reference="PaB75GTPFUmqAUZqO-m7Lw/LkNwsO3Lv0m5g-OqjlQhAA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <ObjectRepositoryTargetData.Data>
     <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj" CVScreenId="bc84cbf2-261d-4fc9-9008-8133b7aba62c" CvElementArea="1147, 715, 198, 43" CvTextArea="1189, 730, 113, 12" CvTextArgument="Acessar O recurso" CvType="Button" DesignTimeRectangle="1150, 718, 193, 38" DesignTimeScaleFactor="1" ElementType="Button" FullSelectorArgument="&lt;webctrl id='btnDownloadUrl' idx='3' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='btnDownloadUrl' type='button' tag='BUTTON' class='btn btn btn-secondary btn-secondary' aaname=' Acessar o recurso ' check:innerText='Acessar o recurso' /&gt;" Guid="8cfe6419-394d-4111-83d8-c493a86707d9" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Portal de Dados Abertos' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
       <TargetAnchorable.Anchors>
@@ -7,7 +7,7 @@
           <Target CVScreenId="bc84cbf2-261d-4fc9-9008-8133b7aba62c" CvTextArea="1149, 608, 718, 22" CvTextArgument="Dicionario de Dados do Cadastro Nacional da Pessoa Juridica" CvType="Text" DesignTimeRectangle="1149, 608, 718, 23" ElementType="Text" FullSelectorArgument="&lt;webctrl idx='3' parentid='collapse-recursos' tag='H4' /&gt;" FuzzySelectorArgument="[string.Format(&quot;&lt;webctrl type='' parentid='collapse-recursos' tag='H4' class='' aaname='Dicionário de Dados do Cadastro Nacional da Pessoa Jurídica' check:innerText='{0}' /&gt;&quot;, strResourceName)]" Guid="5bd62a23-9452-4c49-9acb-826a67265817" SearchSteps="FuzzySelector, CV" />
         </scg:List>
       </TargetAnchorable.Anchors>
-      <imageRef attrName="InformativeScreenshot" originalValue="33274a60de5ee05c27721bce5c7feead.png" xmlns="">0XRUUQINADUGftuC4Zzd5gQ</imageRef>
+      <imageRef attrName="InformativeScreenshot" originalValue="33274a60de5ee05c27721bce5c7feead.png" xmlns="">0rYnDbkR_OUGpyT_eCVZdJQ</imageRef>
     </TargetAnchorable>
     <scg:List x:TypeArguments="ObjectRepositoryVariableData" x:Key="Variables" Capacity="1">
       <ObjectRepositoryVariableData Name="strResourceName" />
