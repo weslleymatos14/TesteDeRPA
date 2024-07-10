@@ -1,5 +1,9 @@
 ### A documentação está incluída na pasta Documentação
 
+**Teste de RPA para Download e Processamento de Dados CNPJ**
+
+- Objetivo: Automatizar o download e processamento mensal dos dados do CNPJ do Portal de Dados Abertos
+
 ### Modelo REFrameWork
 
 **Robotic Enterprise Framework**
@@ -41,3 +45,4 @@
 2. Verifique o arquivo Transaction.xlsx e adicione uma data para o último download realizado
 3. Verifique o arquivo ResourceNames.xlsx e adicione/remova os recursos que deseja que o processo realize o donwload
 4. Configure o workflow _4.NotificaTI.xaml_ com o seu e-mail que está habilitado para envio SMTP ou Outlook
+5. Verique se a extensão do UiPath está corretamente instalada no navegador Edge

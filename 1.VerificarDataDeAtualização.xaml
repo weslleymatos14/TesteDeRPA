@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1499,1907</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2139,1907</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>_1_VerificarDataDeAtualização_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -108,6 +108,8 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>System.Runtime.Numerics</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="1.VerificarDataDeAtualização" sap:VirtualizedContainerService.HintSize="608,1842" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -135,7 +137,7 @@
               <uix:NGetText.Target>
                 <uix:TargetAnchorable BrowserURL="https://dados.gov.br/dados/conjuntos-dados/cadastro-nacional-da-pessoa-juridica---cnpj" CVScreenId="92a7b8ad-9b59-4275-9a01-26a9a07008ba" CvTextArea="88, 746, 308, 18" CvType="AnyWordGroup" DesignTimeRectangle="40, 745, 563, 25" DesignTimeScaleFactor="1" FullSelectorArgument="&lt;webctrl class='col-12' idx='4' parentid='collapseSidebar' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='col-12' type='' parentid='collapseSidebar' tag='DIV' /&gt;" Guid="bfc7e47b-e743-4108-ad4a-b794accff83e" InformativeScreenshot="8158672e0027e2726ddca435b2d9af61.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Portal de Dados Abertos' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CVScreenId="92a7b8ad-9b59-4275-9a01-26a9a07008ba" CvElementArea="61, 746, 21, 21" CvType="Icon" DesignTimeRectangle="60, 749, 24, 16" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;section&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;p&amp;gt;div&amp;gt;div&amp;gt;em' idx='4' parentid='collapseSidebar' tag='EM' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='fa fa-clock' parentid='collapseSidebar' tag='EM' aaname='' /&gt;" Guid="6b0c0d7c-9bae-4bb8-91b5-4d41df97be59" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAUCAYAAACeXl35AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE7SURBVEhLzZWxasMwFEX7T5q0eRJ00BYKGf0BzeYlIVuWZPHkLzAZTD8hZAgkSzJpKHQo3rJ58iYw3MpGDa0sKa5bRC/c6V2/g2W95wcE1j8GNhLlpUC2ShBzDs5jJKsMxaWEbHRmgAYB61OKCSUgxGE6QXqqddqvu8ByG4PaID1TxNtSP+WWF1gfFmBmY57iXFWoqjNSbtQIw+Lgf1M3sBFYM7Oh8jTHtQtckU8tdbaG8HxTJ1Dukn6z1veAyslOdgmbnECxiazNhgCjjegSNjmBx6W92RAgWR67hE1O4H5uadT6BlTH/l5g9mjJzPc60dfPj1TdxNmLGnadg3xD9vQ9M+pInZdGmz3nEO0EvGbgRm3UpXGOxVfTCJG5gcaORSvr4Hv9m8HXCrraPhV0ed8U8vf0lwoMBD4A+M4ll4NyLMAAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -143,9 +145,9 @@
               </uix:NGetText.Target>
             </uix:NGetText>
             <ui:Matches BuilderPattern="(\d{2})[/](\d{2})[/](\d{4})" DisplayName="Find Matching Patterns" FirstMatch="[strLastChange]" sap:VirtualizedContainerService.HintSize="450,92" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[strLastChange]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Digit&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;2&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:1,&quot;OperationID&quot;:&quot;ONEOF&quot;,&quot;OperationName&quot;:&quot;One of&quot;,&quot;OperationValue&quot;:&quot;\/&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:2,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Digit&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;2&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:3,&quot;OperationID&quot;:&quot;ONEOF&quot;,&quot;OperationName&quot;:&quot;One of&quot;,&quot;OperationValue&quot;:&quot;\/&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:4,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;Digit&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;4&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="(\d{2})[/](\d{2})[/](\d{4})" RegexOption="IgnoreCase" />
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Last extraction date: &quot; + DateTime.Parse(in_TransactionItem(&quot;LastChange&quot;).ToString).ToString(&quot;dd/MM/yyyy&quot;)]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Last extraction date: &quot; + DateTime.Parse(in_TransactionItem(&quot;LastExecution&quot;).ToString).ToString(&quot;dd/MM/yyyy&quot;)]" />
             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,175" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Last change date: &quot; + DateTime.Parse(strLastChange, System.Globalization.CultureInfo.GetCultureInfo(&quot;pt-BR&quot;)).ToString(&quot;dd/MM/yyyy&quot;)]" />
-            <If Condition="[DateTime.Parse(in_TransactionItem(&quot;LastChange&quot;).ToString).CompareTo(DateTime.Parse(strLastChange, System.Globalization.CultureInfo.GetCultureInfo(&quot;pt-BR&quot;))) = -1]" sap:VirtualizedContainerService.HintSize="450,793" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[DateTime.Parse(in_TransactionItem(&quot;LastExecution&quot;).ToString).CompareTo(DateTime.Parse(strLastChange, System.Globalization.CultureInfo.GetCultureInfo(&quot;pt-BR&quot;))) = -1]" sap:VirtualizedContainerService.HintSize="450,793" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
                 <Sequence DisplayName="Then" sap:VirtualizedContainerService.HintSize="416,254" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
